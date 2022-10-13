@@ -42,7 +42,8 @@ This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file an
 This works on Linux, if you are using Windows you have to find an alternative to `xxd`.
 
 8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;`   
-If you don't declare the array as a `const`, it will end up in RAM memory instead of in FLASH memory.
+If you don't declare the array as a `const`, it will end up in RAM memory instead of in FLASH memory.  
+You have to do this for all files hosted on your esp32. (`index.htm` and both `*.woff2` files)
 
 9. Add `#include #include "Roboto-latin.h"` and `#include "Roboto-latin-ext.h"` in your sketch.
 
