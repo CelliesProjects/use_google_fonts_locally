@@ -7,7 +7,7 @@ A simple example sketch on how to set up ESPAsyncWebServer is included.
 1. Locate the font on [https://fonts.google.com/](https://fonts.google.com/). 
 
 2. You will need to download the font through the google font API which is `https://fonts.googleapis.com/css2`.   
-See [https://developers.google.com/fonts/docs/css2](). No account is needed to download the font files.
+See [https://developers.google.com/fonts/docs/css2](https://developers.google.com/fonts/docs/css2). No account is needed to download the font files.
 
 3. Open the link [https://fonts.googleapis.com/css2?family=Roboto](https://fonts.googleapis.com/css2?family=Roboto) in your browser and locate your local font variants. 
 In this case `latin` and `latin-ext`. (Western alphabet and western accented letters) 
