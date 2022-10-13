@@ -20,7 +20,7 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url(Roboto-latin-ext.woff2) format('woff2');
+  src: url(/Roboto-latin-ext.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -35,7 +35,8 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
 
 7. To use the files in your project convert the font files to C-style header files with:  
 `xxd -i inputfile > outputfile`.  
-This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file and `xxd -i Roboto-latin-ext.woff2 > Roboto-latin-ext.h` for both files.
+This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file and `xxd -i Roboto-latin-ext.woff2 > Roboto-latin-ext.h` for both files.  
+This works on Linux, if you are using Windows you have to find an alternative to `xxd`.
 
 8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;`   
 If you don't declare the array as a const, it will end up in RAM memory instead of in FLASH memory.
