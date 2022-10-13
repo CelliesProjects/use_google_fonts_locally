@@ -1,6 +1,6 @@
-# How to host google fonts through ESPAsyncWebServer
+# How to host Google fonts through ESPAsyncWebServer
 
-In this example we are going to serve the google Roboto font hosted from your esp32.
+In this example we are going to serve the Google Roboto font from your esp32 instead of through the Google API. This means downloading the font files, renaming and adjusting them, converting to C-style header files and use them with ESPAsynWebServer.
 
 1. Locate the font on [https://fonts.google.com/](https://fonts.google.com/). 
 
