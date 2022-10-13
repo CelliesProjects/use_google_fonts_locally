@@ -14,7 +14,7 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
 
 5. Rename the files to some easier names to remember, I used `Roboto-latin.woff2` and `Roboto-latin-ext.woff2`.
 
-6. Copy the complete css `@font-face{}` section containg the desired variants to your html file. Change the `src: url` lines 
+6. Copy the complete css `@font-face{}` section containg the desired variants to the html file hosted on the esp32. Change the `src: url` lines like below  
 ```/* latin-ext */
 @font-face {
   font-family: 'Roboto';
@@ -32,10 +32,8 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }```
 
+7. To use the files in your project convert the font files to C-style header files with:  
+`xxd -i inputfile > outputfile`.  
+This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file and `xxd -i Roboto-latin-ext.woff2 > Roboto-latin-ext.h` for both files.
 
-7. Convert the font files to C-style header files with:  
-`xxd -i inputfile > outputfile`
-
-4. Copy the css `@font-face{}` section to your html file.
-
-5. Replace the internet url with your local url.# use_google_fonts_locally
+8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;` If you don't declare the array as a const, it will end up in RAM memory instead of the FLASH memory.
