@@ -2,6 +2,8 @@
 
 In this example we are going to serve the Google Roboto font from your esp32 instead of through the Google API. This means downloading the font files, renaming and adjusting them, converting to C-style header files and use them with ESPAsynWebServer.
 
+A simple example sketch on how to set up ESPAsyncWebServer is included.
+
 1. Locate the font on [https://fonts.google.com/](https://fonts.google.com/). 
 
 2. You will need to download the font through the google font API which is `https://fonts.googleapis.com/css2`.   
@@ -39,8 +41,10 @@ This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file an
 This works on Linux, if you are using Windows you have to find an alternative to `xxd`.
 
 8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;`   
-If you don't declare the array as a const, it will end up in RAM memory instead of in FLASH memory.
+If you don't declare the array as a `const`, it will end up in RAM memory instead of in FLASH memory.
 
 9. Add `#include #include "Roboto-latin.h"` and `#include "Roboto-latin-ext.h"` in your sketch.
 
 10. Set up ASyncWebServer to use the `Content-Type` header `application/x-font-woff2` when serving these files.
+
+Included are the files used in this example. 
