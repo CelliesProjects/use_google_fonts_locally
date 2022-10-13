@@ -1,11 +1,11 @@
-# How to use google fonts without a internet connection
+# How to host google fonts through ESPAsyncWebServer
 
 In this example we are going to serve the google Roboto font hosted from your esp32.
 
 1. Locate the font on [https://fonts.google.com/](https://fonts.google.com/). 
 
 2. You will need to download the font through the google font API which is `https://fonts.googleapis.com/css2`.   
-See [https://developers.google.com/fonts/docs/css2]()
+See [https://developers.google.com/fonts/docs/css2](). No account is needed to download the font files.
 
 3. Open the link [https://fonts.googleapis.com/css2?family=Roboto](https://fonts.googleapis.com/css2?family=Roboto) in your browser and locate your local font variants. 
 In this case `latin` and `latin-ext`. (Western alphabet and western accented letters) 
@@ -37,4 +37,9 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
 `xxd -i inputfile > outputfile`.  
 This would be `xxd -i Roboto-latin.woff2 > Roboto-latin.h` for the latin file and `xxd -i Roboto-latin-ext.woff2 > Roboto-latin-ext.h` for both files.
 
-8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;` If you don't declare the array as a const, it will end up in RAM memory instead of the FLASH memory.
+8. In the generated files, change the first line to `const unsigned char Roboto_latin_woff2[] = {` and the last line to `const unsigned int Roboto_latin_woff2_len = 15744;`   
+If you don't declare the array as a const, it will end up in RAM memory instead of in FLASH memory.
+
+9. Add `#include #include "Roboto-latin.h"` and `#include "Roboto-latin-ext.h"` in your sketch.
+
+10. Set up ASyncWebServer to use the `Content-Type` header `application/x-font-woff2` when serving these files.
