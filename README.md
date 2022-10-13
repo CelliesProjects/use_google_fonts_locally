@@ -12,7 +12,7 @@ See [https://developers.google.com/fonts/docs/css2](). No account is needed to d
 3. Open the link [https://fonts.googleapis.com/css2?family=Roboto](https://fonts.googleapis.com/css2?family=Roboto) in your browser and locate your local font variants. 
 In this case `latin` and `latin-ext`. (Western alphabet and western accented letters) 
 
-4. Find the desired font variants and download the files linked to in the line `src: url()` to the folder where your sketch is. These are for Roboto `https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2` for latin-ext and `https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2` for latin.
+4. Download the files linked to in the line `src: url()` to the folder where your sketch is. These are for Roboto `https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7GxKOzY.woff2` for latin-ext and `https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxK.woff2` for latin.
 
 5. Rename the files to some easier names to remember, I used `Roboto-latin.woff2` and `Roboto-latin-ext.woff2`.
 
@@ -47,4 +47,4 @@ If you don't declare the array as a `const`, it will end up in RAM memory instea
 
 10. Set up ASyncWebServer to use the `Content-Type` header `application/x-font-woff2` when serving these files.
 
-Included are the files used in this example. 
+Included are the files used in this example. The example sketch will set up a simple webserver and show some text in the locally hosted `Roboto` font.
