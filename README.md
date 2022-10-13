@@ -17,7 +17,8 @@ In this case `latin` and `latin-ext`. (Western alphabet and western accented let
 5. Rename the files to some easier names to remember, I used `Roboto-latin.woff2` and `Roboto-latin-ext.woff2`.
 
 6. Copy the complete css `@font-face{}` section containg the desired variants to the html file hosted on the esp32. Change the `src: url` lines like below  
-```/* latin-ext */
+```
+/* latin-ext */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
