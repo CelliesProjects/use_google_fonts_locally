@@ -38,6 +38,10 @@ void setup() {
         request->send(response);
     });
 
+    http_server.onNotFound([](AsyncWebServerRequest * const request) {
+        request->send(404);
+    });
+
     http_server.begin();
 
     Serial.printf("Webserver started at %s\n", WiFi.localIP().toString().c_str());
