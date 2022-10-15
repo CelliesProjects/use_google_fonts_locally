@@ -51,7 +51,7 @@ You will have to do this for all files hosted on your ESP32. (`index.htm` and bo
 9. Include `Roboto-latin.h` and `Roboto-latin-ext.h` in your sketch. See below.
 
 10. Set up ASyncWebServer to use the `Content-Type` header `application/x-font-woff2` when serving these files.<br>
-Use the [`request->beginResponse_P()`](https://github.com/me-no-dev/ESPAsyncWebServer#send-large-webpage-from-progmem-and-extra-headers) function to serve data from flash memory.
+Use the [`request->beginResponse_P()`](https://github.com/me-no-dev/ESPAsyncWebServer#send-binary-content-from-progmem) function to serve data from flash memory.
 ```c++
 #include "index_htm.h"
 #include "Roboto-latin.h"
